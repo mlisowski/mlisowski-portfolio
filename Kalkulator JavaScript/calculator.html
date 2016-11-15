@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title>Javascript calculator</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <link href="style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="#" class="pull-left"><img class="navLogo" src="calc.png"></a> 
+                    <a class="navbar-brand" href="#">Web Calculator Application</a>
+                </div>
+            </div>
+        </nav>
+        <div class="content">
+            <div class="jumbotron">
+                <h2>Type your operation below</h2>
+
+            </div>
+
+            <div id="result" class="box-result">
+
+            </div>
+
+            <div>
+
+                <button class="digit">1</button>
+                <button class="digit">2</button>
+                <button class="digit">3</button>
+                <button id="add">+</button><br />
+                <button class="digit">4</button>
+                <button class="digit">5</button>
+                <button class="digit">6</button>
+                <button id="subtract">-</button><br />
+                <button class="digit">7</button>
+                <button class="digit">8</button>
+                <button class="digit">9</button>
+                <button id="multiply">*</button><br />
+                <button class="digit">0</button>
+                <button class="twice" id="equals">=</button>
+                <button id="divide">/</button><br />
+                <button class="full" id="clear">Clear</button>
+            </div>
+
+            <p id="alert"></p>
+        </div>
+
+
+        <footer class="footer navbar navbar-fixed-bottom">
+            <div class="pageContainer">
+                &copy2016 Maciej Lisowski
+            </div>
+
+        </footer>
+        <script src="calculator.js"></script>
+        <script>
+            (function () {
+                var result_box = document.getElementById('result'),
+                        digits_list = document.querySelectorAll('.digit'),
+                        current_number = '',
+                        is_first_action = true,
+                        last_operation = null,
+                        calc = new window.Calculator();
+
+                for (var i = 0; i < digits_list.length; i++) {
+                    digits_list[i].addEventListener('click', function () {
+                        doInsertDigits(this.innerText);
+                    });
+                }
+
+                var doInsertDigits = function (digit) {
+                    if (last_operation !== 'equals') {
+                        current_number += digit;
+
+                        result_box.innerHTML += digit;
+                    }
+                };
+
+                var doOperation = function (type, sign) {
+                    sign = '&nbsp;' + sign + '&nbsp';
+
+                    if (is_first_action) {
+                        calc.add(current_number);
+                        is_first_action = false;
+                    }
+
+                    if (last_operation !== null && last_operation !== 'equals') {
+                        calc.operate(last_operation, current_number);
+                    }
+
+                    if (type === 'equals') {
+                        current_number = '';
+                        result_box.innerHTML += ' = <strong>' + calc.getResult() + '</strong> ';
+                        last_operation = type;
+                    } else {
+                        current_number = '';
+                        last_operation = type;
+                        result_box.innerHTML += sign;
+                    }
+                };
+
+
+                var doClear = function () {
+                    current_number = '';
+                    last_operation = null;
+                    is_first_action = true;
+                    result_box.innerHTML = '';
+                    calc.clear();
+                };
+
+                document.getElementById('add').addEventListener('click', function () {
+                    doOperation('add', '+');
+                });
+
+                document.getElementById('subtract').addEventListener('click', function () {
+                    doOperation('substract', '-');
+                });
+
+                document.getElementById('multiply').addEventListener('click', function () {
+                    doOperation('multiply', '*');
+                });
+
+                document.getElementById('divide').addEventListener('click', function () {
+                    doOperation('divide', '/');
+                });
+
+                document.getElementById('equals').addEventListener('click', function () {
+                    doOperation('equals');
+                });
+
+                document.getElementById('clear').addEventListener('click', doClear);
+
+                document.addEventListener('keydown', function (event) {
+                    console.log(event.keyCode);
+                    var map_events = {
+                        '+': 'add',
+                        '-': 'substract',
+                        '*': 'multiply',
+                        '/': 'divide',
+                        '=': 'equals'
+                    };
+
+                    if (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].indexOf(event.key) !== -1) {
+                        doInsertDigits(event.key);
+                    }
+
+                    if (['+', '-', '*', '/', '='].indexOf(event.key) !== -1) {
+                        doOperation(map_events[event.key], event.key);
+                    }
+
+                    if (event.keyCode === 13) {
+                        doOperation('equals', '=');
+                    }
+
+                    if (event.keyCode === 27) {
+                        doClear();
+                    }
+                });
+
+            }());
+
+        </script>
+
+    </body>
+</html>

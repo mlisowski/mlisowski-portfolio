@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <style>
+                body {
+                    background: #D9D9D9;
+                    padding-bottom: 50px;
+                }
+
+                .footer {
+                    text-align: center;
+                    margin-top: 50px;
+                    font-size: 12px;
+                    color: white;
+                    background-color: #151101;
+                } 
+                .content {
+                    min-height: 100%;
+                    height: 100%;
+                }
+                </style>
+
+
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Register Form</a>
+    </div>
+     </div>
+</nav>
+        <div class="content">
+            <div class="jumbotron">
+                <h2>Simple built-in input validation</h2>
+            </div>
+
+            <p id="alert"></p>
+        </div>
+       
+    <form action="http://www.kostkarubika.org/dotnetgda1/" method="POST">
+        <input pattern="^\d*[a-zA-Z][a-zA-Z0-9]*$" required placeholder="Imię" name="first_name"> <br>
+        <input pattern="^\d*[a-zA-Z][a-zA-Z0-9]*$" required placeholder="Nazwisko" name="last_name"> <br>
+        Płeć <input checked type="radio" name="gender" value="male"> Mężczyzna
+        <input type="radio" name="gender" value="female"> Kobieta <br>
+        <input required placeholder="Wiek" type="number" name="age" min="18" max="100"><br>
+        <input placeholder="Email" type="email" name="email"><br>
+        <input pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Hasło" type="password" name="password"><br>
+        <input type="submit" value="Wyślij">
+    </form>
+    
+     <footer class="footer navbar navbar-fixed-bottom">
+            <div class="pageContainer">
+                &copy2016 Maciej Lisowski
+            </div>
+
+        </footer>
+
+</body>
+</html>

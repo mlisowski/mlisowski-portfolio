@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+        <script src="js/detailedlistapp.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+        <title>Zadanie rekrutacyjne</title>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        
+        <header>
+        <div class="headerWelcome">
+            <div class="pageContainer">
+                <h1 class="headerWelcomeTitle">
+                    Zadanie rekrutacyjne
+                </h1>
+                <div class="header__welcome__subtitle">
+                    <h2>
+                        Widok listy i widok szczegółowy
+                    </h2>
+                    
+                </div>
+                
+                <div class="header__welcome__subtitle">
+                    Rozwiązanie mojego pomysłu zawiera widok listy (prezentuje podstawowe dane: imiona i nazwisko) jako prosta OL (oreder list) oraz widok szczegółowy (pozostałe dane opakowane w estetyczną tabelę formatowaną bootstrapem). Mechanizm przejścia do widoku szczegółowego stworzyłem w oparciu o JQuery. Rozwiązanie, zgodnie z założeniami zadania, jest skalowalne i czytelne dla listy zawierającej zarówno 5 rekorów, jak i 2000 rekordów. 
+                    Kliknij osobę aby rozwinąć
+                </div>
+                                </div>
+            </div>
+            
+    </header>
+<div class="header__navigation"></div>
+        <div id="mainDiv" class="container table-striped pageContainer">
+            <ol class="">
+                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                                <li class="peopleListDisplayedHeader">Piotr Paweł Kowalski
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Podstawowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imiona</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Piotr Paweł</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Nazwisko rodowe</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Kowalski</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Szczegółowe dane osobowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Adres</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">80-342, ul. Polanki 13, Gdańsk</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Data i miejsce urodzena:</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">09.11.1972 Warszawa</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Pesel</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">72110994821</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">NIP</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">5261243667</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię ojca</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Janusz</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Imię i nazwisko panieńskie matki</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Grażyna Nowak</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Płeć</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Mężczyzna</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dokument tożsamości</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Dowód osobisty, nr AXK577643, wydany przez Prezydenta Miasta Gdańska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Dane kontaktowe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Email</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">kowalski@wp.pl</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Telefon</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">504328823</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered table-condensed peopleDetailedInformation">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Pochodzenie i wykształcenie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wykształcenie</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Wyższe</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Obywatelstwo</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polskie</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Narodowość</td>
+                                    <td class="col-md-6 col-lg-6 col-sm-6 col-xs-6">Polska</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                
+            </ol>
+        </div>
+
+<footer class="footer">
+        <div class="pageContainer">
+            &copy2016 Maciej Lisowski
+        </div>
+
+    </footer>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
+
