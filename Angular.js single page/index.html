@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html ng-app="myProject">
+	<head>
+		<meta charset='utf-8'>
+		<title>AngularJS</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body ng-controller="mainController">
+		<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container">
+				<a class="navbar-brand" href="#">Home</a>
+				<ul class="nav navbar-nav">
+					<li><a href="http://www.filmweb.pl/person/Nicolas.Cage">Nicolas Cage</a></li>
+					
+				</ul>
+			</div>
+		</nav>
+		<div class="container-fluid h100">
+		<div class="row h100">
+			<div class="col-md-3 h100 primary-color-dark p-t-20">
+                <ul class="nav nav-pills nav-stacked">
+                    <li ng-repeat="i in menu"><a ng-click='changeSite( i.name )'>{{ i.commonName }}</a></li>
+                </ul>
+            </div>
+			<div class="col-md-9 h100 p-t-20">
+                <div class="site" ng-show="menu[0].enabled" ng-controller="userController">
+				    <div class="well">
+                    <button class="btn btn-success" ng-click="addNewUser()" ng-show="!isAdded && !isEdited">Dodaj użytkownika</button>
+                    <table class="table table-hover" ng-hide="isEdited || isAdded">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th>Login</th>
+                            <th>Imię</th>
+                            <th>Nazwisko</th>
+                            <th>Płaca</th>
+                            <th>Akcja</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="(index, user) in users">
+                            <td><img ng-src="{{ user.avatar }}" class="img-circle"></td>
+                            <td>{{ user.login }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.lastName }}</td>
+                            <td>{{ user.salary }} PLN</td>
+                            <td>
+								<button class="btn btn-warning" ng-click="editUser(index)">Edycja</button>
+								<button class="btn btn-danger" ng-click="deleteUser(user.login)">Usuń</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                        <div ng-show="isEdited">
+							<form>
+								<label for="login">Login</label>
+								<input type="text" name="login" id="login" class="form-control" ng-model="currentUser.login">
+								<label for="name">Imię</label>
+								<input type="text" name="name" id="name" class="form-control" ng-model="currentUser.name">
+								<label for="login">Nazwisko</label>
+								<input type="text" name="lastName" id="lastName" class="form-control" ng-model="currentUser.lastName">
+								<label for="salary">Płaca</label>
+								<input type="text" name="salary" id="salary" class="form-control" ng-model="currentUser.salary">
+								
+								<button class="btn btn-success"
+										ng-click="saveUserEdit()">Zakończ edycję</button>
+							</form>
+                        </div>
+                        
+                        <div ng-show="isAdded">
+							<div class="alert alert-danger" role="alert" ng-show="error">
+								<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+								<span class="sr-only">Error:</span>
+							  {{ error }}
+							</div>
+							<form>
+								<label for="newlogin">Login</label>
+								<input type="text" name="login" id="newlogin" class="form-control" ng-model="newUser.login">
+								<label for="newname">Imię</label>
+								<input type="text" name="name" id="newname" class="form-control" ng-model="newUser.name">
+								<label for="newlogin">Nazwisko</label>
+								<input type="text" name="lastName" id="newlastName" class="form-control" ng-model="newUser.lastName">
+								<label for="newsalary">Płaca</label>
+								<input type="text" name="salary" id="newsalary" class="form-control" ng-model="newUser.salary">
+								
+								<span ng-repeat="(index, av) in avatars">
+									<input type="radio" name="avatar" ng-model="newUser.avatar" value="{{ av }}" id="av{{ index }}" class="notVis">
+									<label for="av{{ index }}"><img ng-src="{{ av }}" class="img-circle"></label>
+								</span>
+								
+								<button class="btn btn-success" ng-click="saveUser()">Dodaj użytkownika</button>
+							</form>
+                        </div>
+                    </div>
+                </div> 
+                <div class="site" ng-show="menu[1].enabled">
+				    <div class="well">Nicolas Cage</div>
+                                    <img ng-src="http://www.placecage.com/g/400/600" class="img-rounded">
+                                    
+                </div>
+			</div>
+		</div>
+		</div>
+		
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src='./app.js'></script>
+	</body>
+</html>
