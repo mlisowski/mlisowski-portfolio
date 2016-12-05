@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\Maciek\PROGRAMOWANIE\ConsoleWriter\ConsoleWriter\ConsoleWriter\bin\Debug\ConsoleWriter.exe.config
+C:\Users\user\Desktop\Maciek\PROGRAMOWANIE\ConsoleWriter\ConsoleWriter\ConsoleWriter\bin\Debug\ConsoleWriter.exe
+C:\Users\user\Desktop\Maciek\PROGRAMOWANIE\ConsoleWriter\ConsoleWriter\ConsoleWriter\bin\Debug\ConsoleWriter.pdb
+C:\Users\user\Desktop\Maciek\PROGRAMOWANIE\ConsoleWriter\ConsoleWriter\ConsoleWriter\obj\Debug\ConsoleWriter.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\Maciek\PROGRAMOWANIE\ConsoleWriter\ConsoleWriter\ConsoleWriter\obj\Debug\ConsoleWriter.exe
+C:\Users\user\Desktop\Maciek\PROGRAMOWANIE\ConsoleWriter\ConsoleWriter\ConsoleWriter\obj\Debug\ConsoleWriter.pdb
