@@ -1,0 +1,31 @@
+.container-main {
+    min-height: 800px; 
+    height: 100%; 
+    border-left: solid 1px;
+}
+
+.container-menu {
+    background-color: #506266;
+    min-height: 800px; 
+    height: 100%; 
+}
+
+.menu-categories {
+    cursor: pointer;
+}
+
+.jumbotron-content {
+    padding: 7px;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.formEdit {
+    margin-bottom: 100px;
+}
+
+.tableUser {
+    formEdit: fixed;
+}
