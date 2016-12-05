@@ -1,0 +1,12 @@
+c:\users\user\documents\visual studio 2015\Projects\MoneyExchange\MoneyExchange\bin\Debug\MoneyExchange.exe.config
+c:\users\user\documents\visual studio 2015\Projects\MoneyExchange\MoneyExchange\bin\Debug\MoneyExchange.exe
+c:\users\user\documents\visual studio 2015\Projects\MoneyExchange\MoneyExchange\bin\Debug\MoneyExchange.pdb
+c:\users\user\documents\visual studio 2015\Projects\MoneyExchange\MoneyExchange\obj\Debug\MoneyExchange.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\MoneyExchange\MoneyExchange\obj\Debug\MoneyExchange.exe
+c:\users\user\documents\visual studio 2015\Projects\MoneyExchange\MoneyExchange\obj\Debug\MoneyExchange.pdb
+C:\Users\user\Desktop\Maciek\PROGRAMOWANIE\money exchange\c#\MoneyExchange\MoneyExchange\bin\Debug\MoneyExchange.exe.config
+C:\Users\user\Desktop\Maciek\PROGRAMOWANIE\money exchange\c#\MoneyExchange\MoneyExchange\obj\Debug\MoneyExchange.exe
+C:\Users\user\Desktop\Maciek\PROGRAMOWANIE\money exchange\c#\MoneyExchange\MoneyExchange\obj\Debug\MoneyExchange.pdb
+C:\Users\user\Desktop\Maciek\PROGRAMOWANIE\money exchange\c#\MoneyExchange\MoneyExchange\bin\Debug\MoneyExchange.exe
+C:\Users\user\Desktop\Maciek\PROGRAMOWANIE\money exchange\c#\MoneyExchange\MoneyExchange\bin\Debug\MoneyExchange.pdb
+C:\Users\user\Desktop\Maciek\PROGRAMOWANIE\money exchange\c#\MoneyExchange\MoneyExchange\obj\Debug\MoneyExchange.csprojResolveAssemblyReference.cache
