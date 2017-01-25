@@ -1,0 +1,6 @@
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\Zadania CSharp\bin\Debug\Zadania_CSharp.exe.config
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\Zadania CSharp\bin\Debug\Zadania_CSharp.exe
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\Zadania CSharp\bin\Debug\Zadania_CSharp.pdb
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\Zadania CSharp\obj\Debug\Silnia.csprojResolveAssemblyReference.cache
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\Zadania CSharp\obj\Debug\Zadania_CSharp.exe
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\Zadania CSharp\obj\Debug\Zadania_CSharp.pdb

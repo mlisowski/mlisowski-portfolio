@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silnia", "Zadania CSharp\Silnia.csproj", "{9B6CE675-471F-4D5B-B731-54A7FEA842C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibonacci", "Fibonacci\Fibonacci.csproj", "{4A3173B1-D13A-400F-A2E1-4CF45BEF033F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxCalculator", "TaxCalculator\TaxCalculator.csproj", "{AD07D34A-1E8D-4B8D-85AA-C10FB177A5CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessNumber", "DisplayPatterns\GuessNumber.csproj", "{691517DD-B1AC-4021-9F08-2313141E4D96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityGrow", "CityGrow\CityGrow.csproj", "{DA2714B6-3CC3-4F81-BC8F-E20D4D30A396}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinQPractise", "LinQPractise\LinQPractise.csproj", "{8033E737-EE05-4B97-91F9-C9F057824B39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B6CE675-471F-4D5B-B731-54A7FEA842C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B6CE675-471F-4D5B-B731-54A7FEA842C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B6CE675-471F-4D5B-B731-54A7FEA842C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B6CE675-471F-4D5B-B731-54A7FEA842C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A3173B1-D13A-400F-A2E1-4CF45BEF033F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A3173B1-D13A-400F-A2E1-4CF45BEF033F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A3173B1-D13A-400F-A2E1-4CF45BEF033F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A3173B1-D13A-400F-A2E1-4CF45BEF033F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD07D34A-1E8D-4B8D-85AA-C10FB177A5CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD07D34A-1E8D-4B8D-85AA-C10FB177A5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD07D34A-1E8D-4B8D-85AA-C10FB177A5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD07D34A-1E8D-4B8D-85AA-C10FB177A5CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{691517DD-B1AC-4021-9F08-2313141E4D96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{691517DD-B1AC-4021-9F08-2313141E4D96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{691517DD-B1AC-4021-9F08-2313141E4D96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{691517DD-B1AC-4021-9F08-2313141E4D96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA2714B6-3CC3-4F81-BC8F-E20D4D30A396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA2714B6-3CC3-4F81-BC8F-E20D4D30A396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA2714B6-3CC3-4F81-BC8F-E20D4D30A396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA2714B6-3CC3-4F81-BC8F-E20D4D30A396}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8033E737-EE05-4B97-91F9-C9F057824B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8033E737-EE05-4B97-91F9-C9F057824B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8033E737-EE05-4B97-91F9-C9F057824B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8033E737-EE05-4B97-91F9-C9F057824B39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

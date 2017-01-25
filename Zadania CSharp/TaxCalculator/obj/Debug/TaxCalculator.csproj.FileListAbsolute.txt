@@ -1,0 +1,5 @@
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\TaxCalculator\bin\Debug\TaxCalculator.exe.config
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\TaxCalculator\bin\Debug\TaxCalculator.exe
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\TaxCalculator\bin\Debug\TaxCalculator.pdb
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\TaxCalculator\obj\Debug\TaxCalculator.exe
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\TaxCalculator\obj\Debug\TaxCalculator.pdb

@@ -1,0 +1,6 @@
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\DisplayPatterns\bin\Debug\DisplayPatterns.exe.config
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\DisplayPatterns\bin\Debug\DisplayPatterns.exe
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\DisplayPatterns\bin\Debug\DisplayPatterns.pdb
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\DisplayPatterns\obj\Debug\DisplayPatterns.exe
+c:\users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\DisplayPatterns\obj\Debug\DisplayPatterns.pdb
+C:\Users\mlisowsx\documents\visual studio 2015\Projects\Zadania CSharp\DisplayPatterns\obj\Debug\GuessNumber.csprojResolveAssemblyReference.cache
